@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Card from "./Card"
-
+import './index.css'
 
 function App() {
   const [products, setProducts] = useState([
@@ -15,7 +15,7 @@ function App() {
       id: 2,
       name: "SmartPhone",
       price: 699.99,
-      categorry: "Electronics",
+      category: "Electronics",
       stock: 30,
     }
   ])
@@ -23,9 +23,14 @@ function App() {
 
   return (
     <>
+    <div className="showcase">
     {products.map((product) => (
-      <Card product={product} />
+      <Card
+       product={product} 
+       products={products}
+       setProducts={setProducts} />
     ))}
+    </div>
      
     </>
   )
